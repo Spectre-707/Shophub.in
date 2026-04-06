@@ -1,0 +1,57 @@
+<!-- ================= CART PAGE (cart.html) ================= --><!DOCTYPE html><html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cart - Shop Hub</title>
+<style>
+body{font-family:Arial;margin:0;background:#f4f6f9}
+header{background:#ff7a18;color:#fff;padding:15px;text-align:center}
+nav{background:#222;padding:10px;text-align:center}
+nav a{color:#fff;margin:10px;text-decoration:none}
+.container{padding:20px}
+.item{background:#fff;padding:10px;margin-bottom:10px;border-radius:8px}
+.btn{background:#ff7a18;color:#fff;padding:8px;border:none;margin-top:10px}
+.total{font-size:18px;font-weight:bold;margin-top:15px}
+</style>
+</head>
+<body><header>
+<h1>Your Cart</h1>
+</header><nav>
+<a href="index.html">Home</a>
+<a href="products.html">Products</a>
+<a href="cart.html">Cart</a>
+</nav><div class="container">
+<div id="cart-items"></div>
+<div class="total" id="total-price"></div>
+<button class="btn" onclick="checkout()">Proceed to Buy</button>
+</div><script>
+let cart = JSON.parse(localStorage.getItem('cart')) || [];
+let prices = {"Headphones":999,"Watch":1499,"Mouse":599,"Keyboard":799};
+
+function loadCart(){
+let container = document.getElementById('cart-items');
+let total = 0;
+container.innerHTML = "";
+
+cart.forEach((item,index)=>{
+let price = prices[item] || 500;
+total += price;
+container.innerHTML += `<div class="item">${item} - ₹${price} <button onclick="removeItem(${index})">Remove</button></div>`;
+});
+
+document.getElementById('total-price').innerText = "Total: ₹" + total;
+}
+
+function removeItem(i){
+cart.splice(i,1);
+localStorage.setItem('cart',JSON.stringify(cart));
+loadCart();
+}
+
+function checkout(){
+alert("Redirecting to payment (use affiliate link here)");
+}
+
+loadCart();
+</script></body>
+</html><!-- ================= UPDATE NOTE ================= --><!-- Also add this link in ALL navbars --><!-- <a href="cart.html">Cart</a> -->

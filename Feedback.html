@@ -1,0 +1,91 @@
+1<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feedback - Shop Hub</title>
+
+    <style>
+        body {
+            font-family: Arial;
+            margin: 0;
+            background: #f4f6f9;
+        }
+
+        header {
+            background: #ff7a18;
+            color: white;
+            padding: 15px;
+            text-align: center;
+        }
+
+        nav {
+            background: #222;
+            padding: 10px;
+            text-align: center;
+        }
+
+        nav a {
+            color: white;
+            margin: 10px;
+            text-decoration: none;
+        }
+
+        .container {
+            padding: 20px;
+        }
+
+        .box {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+        }
+
+        input, textarea {
+            width: 100%;
+            padding: 10px;
+            margin-top: 10px;
+        }
+
+        .btn {
+            background: #ff7a18;
+            color: white;
+            padding: 10px;
+            border: none;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+    <h1>Feedback</h1>
+</header>
+
+<nav>
+    <a href="index.html">Home</a>
+    <a href="products.html">Products</a>
+    <a href="support.html">Customer Care</a>
+    <a href="feedback.html">Feedback</a>
+    <a href="cart.html">Cart</a>
+</nav>
+
+<div class="container">
+    <div class="box">
+        <h2>Give Your Feedback</h2>
+
+        <input type="text" placeholder="Your Name">
+        <textarea placeholder="Your Feedback"></textarea>
+        <button class="btn" onclick="submitFeedback()">Submit</button>
+    </div>
+</div>
+
+<script>
+function submitFeedback(){
+    alert("Thank you for your feedback!");
+}
+</script>
+
+</body>
+</html>
